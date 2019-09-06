@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Try django</title>
+</head>
+
+<body>
+    {%include 'navbar.html'%}
+    {% block content %}
+    default value here if the variable 'content' is not
+    used'{# this is a comment #}
+    {% endblock %}
+
+    <p>This will be here regardless of any content</p>
+
+    {% block var_xyz %}
+    default value here if the variable 'var_xyz' is not used'
+    {# this is a comment #}
+    {% endblock %}
+
+    {%comment %}
+    this is a multiline comment
+    as you can see
+    {%endcomment %}
+
+</body>
+
+</html>

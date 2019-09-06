@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<span>begin about.html
+
+    <h1>Hello world form html file</h1>
+    <p>this is a template</p>
+    <p>about</p>
+
+    <p>
+        User : {{request.user}} (request object is always available even if context is empty)
+        <br>
+        {{my_text}}
+        <br>
+        {{my_html |safe}} This was sent as html
+    </p>
+    <ul>
+        {% for my_item in my_list %}
+            {% if my_item == 4 %}
+                <li>{{my_item}} + 22 = {{my_item|add:22}}</li>
+            {% elif my_item == 'asdf' %}
+                <li>this was 'asdf' so changed</li>
+            {% elif my_item == 'def'%}
+                <li>this was 'def'</li>
+                <ul>
+                    <li>this was 'def' double</li>
+                </ul>
+            {% else %}
+                <li>{{forloop.counter}} - {{my_item}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    end about.html
+</span>
+{% endblock %}

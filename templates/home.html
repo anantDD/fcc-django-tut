@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hello world form html file</h1>
+<p>this is a template</p>
+{% endblock %}
+
+<p>This will not be shown </p>
+
+{%comment %}
+<!-- This will throw an error : 'block' tag with name 'content' appears more than once -->
+<!-- so we have to comment it out -->
+{% block content %}
+<h1>Hello world form html file</h1>
+<p>this is a template2222</p>
+{% endblock %}
+{%endcomment%}
+
+{% block var_xyz %}
+<h1>Hello xyz</h1>
+<p>aoooo</p>
+{% endblock %}
+
+<p>This will not be shown either </p>
