@@ -12,8 +12,8 @@ def product_list_view(request):
     return render(request, "products/product_list.html", context)
 
 
-def dynamic_lookup_view(request):
-    obj = Product.objects.get(id=1)
+def dynamic_lookup_view(request, my_id):
+    obj = Product.objects.get(id=my_id)
     context = {
         'object': obj
     }
