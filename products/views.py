@@ -1,8 +1,19 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 
 from .forms import ProductForm, RawProductForm
 from .models import Product
+
+
+def product_delete_view(request, my_id):
+    obj = get_object_or_404(Product, id=my_id)
+    context = {
+        'object': obj
+    }
+    if request.method == 'POST':
+        obj.delete()
+        return redirect('../../')
+    return render(request, 'products/product_delete.html', context)
 
 
 def product_list_view(request):
