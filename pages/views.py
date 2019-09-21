@@ -15,7 +15,7 @@ def contact_view(request):
     return render(request, "contact.html", {})
 
 
-def about_view(request):
+def about_view(request, my_id):
     my_context = {
         "my_text": "This is coming from context",
         "my_number": 123,

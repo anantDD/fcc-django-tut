@@ -12,7 +12,7 @@ def product_delete_view(request, my_id):
     }
     if request.method == 'POST':
         obj.delete()
-        return redirect('../../')
+        return redirect('../list')
     return render(request, 'products/product_delete.html', context)
 
 
