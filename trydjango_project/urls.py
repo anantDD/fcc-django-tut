@@ -26,11 +26,13 @@ from products.views import (
     product_list_view,
 )
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
     # path('about/', about_view, name="about"),
     path('about/<int:my_id>', about_view, name="detail"),
-    path('products/', include('products.urls'))
+    path('products/', include('products.urls')),
+    path('blogs/', include('blogs.urls'))
 ]

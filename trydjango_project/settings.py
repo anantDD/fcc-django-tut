@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # your own apps
     'products',
     'pages',
+    'blogs',
     # third party apps also added here
 ]
 
